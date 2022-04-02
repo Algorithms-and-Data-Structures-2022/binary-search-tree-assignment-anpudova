@@ -11,7 +11,7 @@ namespace assignment {
   }
 
   bool BinarySearchTree::Remove(int key) {
-    remove(key, root_);
+    return remove(key, root_);
   }
 
   void BinarySearchTree::Clear() {
@@ -58,6 +58,7 @@ namespace assignment {
   void BinarySearchTree::insert(int key, int value, Node*& node) {
     if (node == nullptr) {
       node = new Node(key, value);
+      node->key = key;
       return;
     }
     if (key == node->key) {
